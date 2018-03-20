@@ -169,7 +169,7 @@ Accept: application/json;charset=utf-8
 
 ### Refresh tokens
 
-Access tokens expire shortly (1 hour) after they are issued for security reasons. If your integration needs to communicate with the API beyond the access token's lifespan you will need to request a new access token using the refresh token which was issued with the access token. Note that refresh tokens can only used once to get a new access token and refresh token.
+Access tokens expire shortly (1 hour) after they are issued for security reasons. If your integration needs to communicate with the API beyond the access token's lifespan you will need to request a new access token using the refresh token which was issued with the access token. Note that refresh tokens can only be used once to get a new access token and refresh token.
 
 `https://app.teamleader.eu/oauth2/access_token`
 
@@ -1342,6 +1342,13 @@ Update a calendar event.
         + description (string, optional, nullable)
         + starts_at: `2016-02-04T16:00:00+00:00` (string, optional)
         + ends_at: `2016-02-04T18:00:00+00:00` (string, optional)
+        + attendees (array, optional)
+            + (object)
+                + type: `user` (enum[string], required)
+                    + Members
+                        + user
+                        + contact
+                + id: `6ddd2666-65a0-497f-9f01-54c4343ec1a6` (string, required)
 
 + Response 204
 
